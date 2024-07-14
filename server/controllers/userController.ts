@@ -30,7 +30,7 @@ class UserController {
         
         const favorite = await Favorite.create({userId: user.id});
         const token = generateJwt(user.id, user.email, user.role)
-
+        
         return res.json(token)
     }
 
@@ -48,7 +48,6 @@ class UserController {
         }
         
         const token = generateJwt(user.id, user.email, user.role);
-
         return res.json({token});
     }
 
