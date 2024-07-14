@@ -12,9 +12,8 @@ const generateJwt = (id: number, email: string, role: string): string => {
 
 class UserController {
     async registerUser(req: Request, res: Response, next: NextFunction): Promise<Response | void> {
-        const password = req.body;
-        const email = req.body;
-        const role = req.body;
+        
+        const {email, password, role, name} = req.body; 
 
         if(!email ||!password){
             return next(ApiError.badRequest('Неккоректный email или пароль'));
@@ -27,7 +26,7 @@ class UserController {
         }
 
         const hashedPassword = await bcrypt.hash(password, 6);
-        const user:any = await User.create({email, role, password: hashedPassword});
+        const user:any = await User.create({email, role, password: hashedPassword, name});
         
         const favorite = await Favorite.create({userId: user.id});
         const token = generateJwt(user.id, user.email, user.role)
