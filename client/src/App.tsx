@@ -5,12 +5,13 @@ import './App.css'
 
 import NavBar from './components/NavBar'
 import Auth from './pages/Auth'
+import { BrowserRouter } from 'react-router-dom'
 
 function App() {
   const [count, setCount] = useState(0)
 
   return (
-    <>
+    <BrowserRouter>
     <NavBar/>
     <Auth />
       <div>
@@ -33,7 +34,7 @@ function App() {
       <p className="read-the-docs">
         Click on the Vite and React logos to learn more
       </p>
-    </>
+    </BrowserRouter>
   )
 }
 

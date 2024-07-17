@@ -1,4 +1,9 @@
+import { useNavigate} from "react-router-dom";
+import { LOGIN_ROUT } from "../utils/consts_rout";
+
 function NavBar(){
+    const navigate = useNavigate();
+
     return(
         <div className="container-nav-bar">
             <div className="nav-bar-left">
@@ -17,7 +22,8 @@ function NavBar(){
                     <input type="text" placeholder="Поиск..." className="input-search"/>
                 </div>
                 <div className="nav-bar-auth">
-                    <a href="">Войти</a>
+                    <a href="/login">Войти</a>
+                    <button onClick={()=> navigate(LOGIN_ROUT)}>Войти</button>
                     <a href="">Регистрация</a>
                 </div>
             </div>
