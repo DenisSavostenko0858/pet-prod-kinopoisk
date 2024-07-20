@@ -16,7 +16,8 @@ ReactDOM.createRoot(document.getElementById('root')!).render(
       <Context.Provider value={{
         user: new UserStore(),
         // movie: new ProductStore(), 
-      }}></Context.Provider>
-    <App />
+      }}>
+        <App />
+      </Context.Provider>
   </React.StrictMode>,
 )

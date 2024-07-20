@@ -1,20 +1,26 @@
-// import { useNavigate} from "react-router-dom";
-// import { LOGIN_ROUT } from "../utils/consts_rout";
+import { useContext } from "react";
+import {Context} from '../main';
+import{observer} from 'mobx-react-lite'
 
-function NavBar(){
-    // const navigate = useNavigate();
+const NavBar = observer(() =>{
+    const context = useContext(Context);
 
+    const logOut = () => {
+        context?.user.setUser({})
+        context?.user.setIsAuth(false)
+    }
+    
     return(
         <div className="container-nav-bar">
             <div className="nav-bar-left">
                 <div className="nav-bar-logo">
-                    <h2>Kinopolis</h2>
+                    <a href="/"><h2>Kinopolis</h2></a>
                 </div>
                 <div className="nav-bar-links">
                     <a href="/">Главная</a>
-                    <a href="">Фильмы</a>
-                    <a href="">Категории</a>
-                    <a href="">О проекте</a>
+                    <a href="/movie">Фильмы</a>
+                    <a href="/category">Категории</a>
+                    <a href="/about">О проекте</a>
                 </div>
             </div>
             <div className="nav-bar-right">
@@ -22,12 +28,21 @@ function NavBar(){
                     <input type="text" placeholder="Поиск..." className="input-search"/>
                 </div>
                 <div className="nav-bar-auth">
-                    <a href="/login">Войти</a>
-                    <a href="/register">Регистрация</a>
+                {context?.user.isAuth ?
+                    <>
+                        <a href="/profile">Профиль</a>
+                        <button onClick={() => logOut()}>Выйти</button>
+                    </>    
+                    :
+                    <>
+                        <a href="/login">Войти</a>
+                        <a href="/register">Регистрация</a>
+                    </>
+                }
                 </div>
             </div>
         </div>
     )
-}
+});
 
 export default NavBar;

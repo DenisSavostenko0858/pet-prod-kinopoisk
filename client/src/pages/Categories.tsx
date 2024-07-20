@@ -1,7 +1,7 @@
-function Profile(){
+function Categories(){
     return(
         <div className="container-auth">
-            <h2>Профиль</h2>
+            <h2>Категории</h2>
          {/* <form action="/api/login" method="post">
             <input name="email"/>
             <input name="password"/>
@@ -11,4 +11,4 @@ function Profile(){
     )
 }
 
-export default Profile;
+export default Categories;
