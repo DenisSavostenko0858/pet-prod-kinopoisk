@@ -1,8 +1,8 @@
-import { useNavigate} from "react-router-dom";
-import { LOGIN_ROUT } from "../utils/consts_rout";
+// import { useNavigate} from "react-router-dom";
+// import { LOGIN_ROUT } from "../utils/consts_rout";
 
 function NavBar(){
-    const navigate = useNavigate();
+    // const navigate = useNavigate();
 
     return(
         <div className="container-nav-bar">
@@ -11,7 +11,7 @@ function NavBar(){
                     <h2>Kinopolis</h2>
                 </div>
                 <div className="nav-bar-links">
-                    <a href="">Главная</a>
+                    <a href="/">Главная</a>
                     <a href="">Фильмы</a>
                     <a href="">Категории</a>
                     <a href="">О проекте</a>
@@ -23,8 +23,7 @@ function NavBar(){
                 </div>
                 <div className="nav-bar-auth">
                     <a href="/login">Войти</a>
-                    <button onClick={()=> navigate(LOGIN_ROUT)}>Войти</button>
-                    <a href="">Регистрация</a>
+                    <a href="/register">Регистрация</a>
                 </div>
             </div>
         </div>
