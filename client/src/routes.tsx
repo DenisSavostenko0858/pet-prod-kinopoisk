@@ -1,10 +1,11 @@
-import { HOME_ROUT, LOGIN_ROUT, REGISTER_ROUT, MOVIE_ROUT, ABOUT_ROUT, CATEGORIES_ROUT, PROFILE_ROUT } from "./utils/consts_rout"
+import { HOME_ROUT, LOGIN_ROUT, REGISTER_ROUT, MOVIE_ROUT, ABOUT_ROUT, CATEGORIES_ROUT, PROFILE_ROUT, ADMIN_ROUT } from "./utils/consts_rout"
 import Auth from "./pages/Auth"
 import Home from "./pages/Home"
 import About from "./pages/About"
 import Profile from "./pages/Profile"
 import Categories from "./pages/Categories"
 import Movie from "./pages/Movie"
+import Admin from "./pages/AdminPanel"
 
 export const authRoutes = [
     {
@@ -14,6 +15,10 @@ export const authRoutes = [
     {
         path: PROFILE_ROUT,
         Component: Profile
+    },
+    {
+        path: ADMIN_ROUT,
+        Component: Admin
     }
 ]
 

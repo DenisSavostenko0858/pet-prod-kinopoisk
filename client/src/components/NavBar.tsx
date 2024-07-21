@@ -23,6 +23,9 @@ const NavBar = observer(() =>{
                     <a href="/about">О проекте</a>
                 </div>
             </div>
+            <div className="btn-admin-container">
+                {context?.user.user?.role === 'admin' && <a href="/admin" className="btn-admin">Админ панель</a>}
+            </div>
             <div className="nav-bar-right">
                 <div className="nav-bar-search">
                     <input type="text" placeholder="Поиск..." className="input-search"/>

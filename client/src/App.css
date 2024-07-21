@@ -105,3 +105,19 @@
   border-radius: 15px;
   padding: 5px 20px 50px 20px;
 }
+.btn-admin-container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 15px;
+}
+.btn-admin{
+  background-color: #242424;
+  padding: 10px;
+  border-radius: 15px;
+  transition: 0.2s;
+}
+.btn-admin:hover{
+  background-color: #3b3838;
+  transition: 0.2s;
+}
