@@ -21,7 +21,8 @@ const Movie = sequelize.define('movie', {
     id: {type: DataTypes.INTEGER, primaryKey: true, autoIncrement: true},
     name: {type: DataTypes.STRING, unique: true, allowNull: false},
     rating: {type: DataTypes.INTEGER, defaultValue: 0 },
-    img: {type: DataTypes.STRING, allowNull: false},
+    img: {type: DataTypes.STRING},
+    description: {type: DataTypes.STRING, allowNull: false}
 });
 
 const Type = sequelize.define('type', {

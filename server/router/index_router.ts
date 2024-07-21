@@ -1,12 +1,11 @@
 import express from 'express';
 
 import userRouter from './userRout';
+import adminRouter from './adminRout';
 
 const router = express();
 
 router.use('/user', userRouter);
-router.get('/', (req, res) => {
-    res.send('Hello, World!');
-});
+router.use('/admin', adminRouter);
 
 export default router;
