@@ -1,3 +1,3 @@
 Pet project - Kinopoisk
-
-NodeJS + React
+Rest API:
+  - NodeJS/TS + React/tsx 
