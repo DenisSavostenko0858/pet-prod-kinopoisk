@@ -8,6 +8,7 @@ import {login, registration} from '../http/userAPI';
 const Auth = observer(() => {
     const context = useContext(Context);
     const isLogin = location.pathname === LOGIN_ROUT;
+    const [name, setName] = useState('');
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const history = useNavigate();
@@ -18,7 +19,7 @@ const Auth = observer(() => {
             if (isLogin) {
                 data = await login(email, password);
             } else {
-                data = await registration(email, password);
+                data = await registration(name, email, password);
             }
             context?.user.setUser(data);
             context?.user.setIsAuth(true);
@@ -34,6 +35,16 @@ const Auth = observer(() => {
                 <div style={{ width: 600, padding: 20 }}>
                     <h2 style={{ margin: 'auto' }}>{isLogin ? 'Авторизация' : "Регистрация"}</h2>
                     <div style={{ display: 'flex', flexDirection: 'column' }}>
+                        {!isLogin ?
+                          <input
+                                className="mt-3"
+                                placeholder="Ваше Имя..."
+                                value={name}
+                                onChange={e => setName(e.target.value)}
+                                type="name"
+                            />
+                         : <> </>
+                         }
                         <input
                             className="mt-3"
                             placeholder="Введите ваш email..."
