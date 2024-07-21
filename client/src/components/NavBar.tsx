@@ -1,6 +1,6 @@
 import { useContext} from "react";
 import {Context} from '../main';
-import{observer} from 'mobx-react-lite'
+import {observer} from 'mobx-react-lite'
 import { logout } from '../http/userAPI';
 
 const NavBar = observer(() =>{

@@ -1,24 +1,33 @@
-import {makeAutoObservable} from "mobx";
+import { makeAutoObservable } from "mobx";
+
+export type UserType = {
+    name: string;
+    email: string;
+    role: string;
+    // Другие свойства пользователя, если они есть
+}
 
 export default class UserStore {
     private _isAuth: boolean = false;
-    private _user: any = {}
-    
+    private _user: UserType | null = null; // Используем тип UserType
+
     constructor() {
-        makeAutoObservable(this)    
+        makeAutoObservable(this);
     }
 
     setIsAuth(bool: boolean) {
-        this._isAuth = bool
+        this._isAuth = bool;
     }
-    setUser(user: any) {
-        this._user = user
+
+    setUser(user: UserType | null) { // Используем тип UserType
+        this._user = user;
     }
 
     get isAuth(): boolean {
-        return this._isAuth
+        return this._isAuth;
     }
-    get user(): any {
-        return this._user
+
+    get user(): UserType | null { // Используем тип UserType
+        return this._user;
     }
-}    
+}
