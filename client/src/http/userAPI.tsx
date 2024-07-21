@@ -18,3 +18,7 @@ export const registration = async (email: string, password: string): Promise<any
     localStorage.setItem('token', data.token);
     return jwtDecode(data.token);
   };
+
+  export const logout = (): void => {
+    localStorage.removeItem('token');
+};

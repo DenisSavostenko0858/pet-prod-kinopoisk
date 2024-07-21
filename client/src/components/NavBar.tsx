@@ -1,15 +1,15 @@
-import { useContext } from "react";
+import { useContext} from "react";
 import {Context} from '../main';
 import{observer} from 'mobx-react-lite'
+import { logout } from '../http/userAPI';
 
 const NavBar = observer(() =>{
     const context = useContext(Context);
 
     const logOut = () => {
-        context?.user.setUser({})
-        context?.user.setIsAuth(false)
+        logout();
+        window.location.reload(); 
     }
-    
     return(
         <div className="container-nav-bar">
             <div className="nav-bar-left">
