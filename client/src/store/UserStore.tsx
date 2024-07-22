@@ -4,12 +4,12 @@ export type UserType = {
     name: string;
     email: string;
     role: string;
-    // Другие свойства пользователя, если они есть
+   
 }
 
 export default class UserStore {
     private _isAuth: boolean = false;
-    private _user: UserType | null = null; // Используем тип UserType
+    private _user: UserType | null = null; 
 
     constructor() {
         makeAutoObservable(this);
@@ -19,7 +19,7 @@ export default class UserStore {
         this._isAuth = bool;
     }
 
-    setUser(user: UserType | null) { // Используем тип UserType
+    setUser(user: UserType | null) { 
         this._user = user;
     }
 
@@ -27,7 +27,7 @@ export default class UserStore {
         return this._isAuth;
     }
 
-    get user(): UserType | null { // Используем тип UserType
+    get user(): UserType | null { 
         return this._user;
     }
 }

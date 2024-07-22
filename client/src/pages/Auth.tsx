@@ -31,13 +31,12 @@ const Auth = observer(() => {
 
     return(
         <div className="container-auth">
-            <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: 'calc(100vh - 54px)' }}>
-                <div style={{ width: 600, padding: 20 }}>
+                <div className='form-auth'>
                     <h2 style={{ margin: 'auto' }}>{isLogin ? 'Авторизация' : "Регистрация"}</h2>
-                    <div style={{ display: 'flex', flexDirection: 'column' }}>
+                    <div style={{ display: 'flex', flexDirection: 'column', marginTop: '20px' }}>
                         {!isLogin ?
                           <input
-                                className="mt-3"
+                                className="input-auth"
                                 placeholder="Ваше Имя..."
                                 value={name}
                                 onChange={e => setName(e.target.value)}
@@ -46,13 +45,13 @@ const Auth = observer(() => {
                          : <> </>
                          }
                         <input
-                            className="mt-3"
+                            className="input-auth"
                             placeholder="Введите ваш email..."
                             value={email}
                             onChange={e => setEmail(e.target.value)}
                         />
                         <input
-                            className="mt-3"
+                            className="input-auth"
                             placeholder="Введите ваш пароль..."
                             value={password}
                             onChange={e => setPassword(e.target.value)}
@@ -69,7 +68,7 @@ const Auth = observer(() => {
                                 </div>
                             }
                             <button
-                                style={{ background: 'none', border: '1px solid green', padding: 5 }}
+                                className='btn-auth'
                                 onClick={click}
                             >
                                 {isLogin ? 'Войти' : 'Регистрация'}
@@ -77,7 +76,6 @@ const Auth = observer(() => {
                         </div>
                     </div>
                 </div>
-            </div>
         </div>
     )
 })

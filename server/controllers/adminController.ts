@@ -14,7 +14,7 @@ class AdminController {
     }
 
     async addMovies(req: Request, res: Response, next: NextFunction): Promise<Response | void> {
-        const {name, rating, image, description} = req.body;
+        const {name, rating, image, description, typeId, brandId} = req.body;
         
         if(!name ||!description || !rating || !image || !description){
             return next(ApiError.badRequest('Ошибка не указанно поле'));
@@ -26,7 +26,7 @@ class AdminController {
             return next(ApiError.badRequest('Фильм с таким именем уже добавлен'));
         }
 
-        const createdMovie = await Movie.create({name, rating, image, description});
+        const createdMovie = await Movie.create({name, rating, image, description, typeId, brandId});
         res.json(createdMovie);
     }
 
