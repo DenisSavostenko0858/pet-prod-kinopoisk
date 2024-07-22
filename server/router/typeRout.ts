@@ -7,3 +7,5 @@ router.get('/types', typeController.getTypes);
 
 router.post('/addtype', typeController.addType);
 router.post('/delltype/:id', typeController.dellType);
+
+export default router;
